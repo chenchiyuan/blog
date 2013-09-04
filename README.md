@@ -1,4 +1,1 @@
-blog
-====
-
-# My personal blog system powered by Django and markdown.
+### My personal blog system powered by Django and markdown.
