@@ -5,6 +5,7 @@ from __future__ import division, unicode_literals, print_function
 from django.db import models
 from blog import const
 from blog.mixin import QueryMixin
+from django.utils import timezone
 
 class Blog(models.Model, QueryMixin):
     class Meta:
@@ -18,8 +19,8 @@ class Blog(models.Model, QueryMixin):
     category = models.CharField(u"分类", max_length=const.DB_NAME_LENGTH, blank=True, null=True)
     tags = models.CharField(u"标签", max_length=const.DB_NAME_LENGTH, blank=True, null=True)
 
-    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    modify_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+    created_at = models.DateTimeField(u"创建于", auto_now_add=True, blank=True, null=True, default=timezone.now)
+    modify_at = models.DateTimeField(u"修改于", auto_now=True, blank=True, null=True, default=timezone.now)
 
     def __unicode__(self):
         return self.title

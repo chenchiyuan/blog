@@ -5,7 +5,7 @@
 {% block container %}
     <div class="row">
         <div class="col-md-12">
-            <h2><span>{{ blog.title }}</span></h2>
+            <h2 class="post-title"><span>{{ blog.title }}</span></h2>
             <p class="postdate">2013年9月5日</p>
         </div>
     </div>
@@ -15,7 +15,9 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
-                    {{ blog.content }}
+                    {% autoescape off %}
+                        {{ blog.content }}
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
