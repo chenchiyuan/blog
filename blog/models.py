@@ -19,8 +19,11 @@ class Blog(models.Model, QueryMixin):
     category = models.CharField(u"分类", max_length=const.DB_NAME_LENGTH, blank=True, null=True)
     tags = models.CharField(u"标签", max_length=const.DB_NAME_LENGTH, blank=True, null=True)
 
-    created_at = models.DateTimeField(u"创建于", auto_now_add=True, blank=True, null=True, default=timezone.now)
-    modify_at = models.DateTimeField(u"修改于", auto_now=True, blank=True, null=True, default=timezone.now)
+    type = models.SmallIntegerField(u"类型", choices=const.TYPE_CHOICES,
+        default=const.TYPE_BLOG, blank=True, null=True)
+
+    created_at = models.DateTimeField(u"创建于", blank=True, null=True, default=timezone.now)
+    modify_at = models.DateTimeField(u"修改于", blank=True, null=True, default=timezone.now, auto_now=True)
 
     def __unicode__(self):
         return self.title

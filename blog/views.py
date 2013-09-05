@@ -16,3 +16,12 @@ class BlogDetailView(TemplateView):
         blog = Blog.get_by_unique(**kwargs)
         super_context["blog"] = blog
         return super_context
+
+class SlideDetailView(TemplateView):
+    template_name = "blog/slide.html"
+
+    def get_context_data(self, **kwargs):
+        super_context = super(SlideDetailView, self).get_context_data(**kwargs)
+        blog = Blog.get_by_unique(**kwargs)
+        super_context["blog"] = blog
+        return super_context

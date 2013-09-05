@@ -13,20 +13,22 @@
     {% block link %} {% endblock %}
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a>博文</a></li>
-                        <li><a>演示</a></li>
-                        <li><a>项目</a></li>
-                        <li><a>关于我</a></li>
-                    </ul>
+    {% block head %}
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a>博文</a></li>
+                            <li><a>演示</a></li>
+                            <li><a>项目</a></li>
+                            <li><a>关于我</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+     {% endblock %}
 
     <div class="container">
         {% block container %}
@@ -36,20 +38,24 @@
     <script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                   <div class="row">
-                       <div class="col-md-2"></div>
-                       <div class="col-md-8">
-                           <hr>
-                           <p class="text-center">版权所有 By chenchiyuan</p>
-                       </div>
-                   </div>
+    {% block footer %}
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <hr>
+                                <p class="text-center">版权所有 By chenchiyuan</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+     {% endblock %}
+
+    {% block footer-script %} {% endblock %}
 </body>
 </html>

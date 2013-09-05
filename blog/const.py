@@ -8,6 +8,13 @@ DB_NAME_LENGTH = 64
 DB_TITLE_LENGTH = 128
 DB_CONTENT_LENGTH = 16384
 
+TYPE_BLOG = 0
+TYPE_SLIDE = 1
+
+TYPE_CHOICES = (
+    (TYPE_BLOG, "博客"),
+    (TYPE_SLIDE, "幻灯片")
+)
 
 # URLS
 URL_ID = "(?P<id>[0-9]+)"
