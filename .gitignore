@@ -34,5 +34,8 @@ nosetests.xml
 .project
 .pydevproject
 
+# projects
 .idea
 migrations
+*.db
+static
