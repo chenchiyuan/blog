@@ -6,12 +6,13 @@ from optparse import make_option
 from django.core.management import BaseCommand
 from django.conf import settings
 from blog.models import Blog
-from utils.helper import md, parse_meta
+from utils.helper import md, parse_meta, At2Section
 from blog import const
 
-import os
+import os, re
 
 template = [("Title", ""), ("Tags", ""), ("Category", ""), ("Type", const.TYPE_SLIDE)]
+pattern = r"[^@]*(@.*)@end"
 
 def smart_print(content):
     print(content.encode("utf-8"))
@@ -67,9 +68,18 @@ class Command(BaseCommand):
         text = file_handler.read()
         file_handler.close()
 
-        html = md.convert(text.decode("utf-8"))
+        text = text.decode("utf-8")
+        at = At2Section()
+
+        _ = md.convert(text)
         metadata = parse_meta(md)
+
+        prog = re.compile(pattern, re.DOTALL)
+        match = prog.match(text)
+        parsed_html = at.parse(match.group(1))
+        html = md.convert(parsed_html)
         metadata['content'] = html
+
         title = metadata.get("title", "")
         if not title:
             print("MD文件无title")

@@ -6,21 +6,6 @@ import markdown
 from markdown.inlinepatterns import Pattern
 from markdown.util import etree
 
-SECTION_PATTERN = r'@([^@]+)@'
-
-class SectionPattern(Pattern):
-    def handleMatch(self, m):
-        el = etree.Element('section')
-        el.text = m.group(2)
-        return el
-
-section = SectionPattern(SECTION_PATTERN)
-
-class SectionExtension(markdown.Extension):
-    def extendMarkdown(self, md, md_globals):
-        pattern = SectionPattern(SECTION_PATTERN)
-        md.inlinePatterns.add('section', pattern, '_begin')
-
 def parse_meta(md):
     meta = md.Meta
     info = {}
@@ -31,10 +16,55 @@ def parse_meta(md):
             pass
     return info
 
-def makeExtension(configs=None):
-    return SectionExtension(configs=configs)
+class At2Section(object):
+    def __init__(self):
+        self.stack = []
+
+    def pop(self):
+        self.stack.pop(index=-1)
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def parse(self, text):
+        at = ""
+        buffer = ""
+
+        for item in text:
+            if not item == "@":
+                if at:
+                    self.push(buffer)
+                    self.push(at)
+                    at = ""
+                    buffer = ""
+                buffer += item
+            else:
+                at += "@"
+        self.push(buffer)
+        return self.to_text()
+
+    def to_text(self):
+        current = ""
+        text = ""
+        for item in self.stack:
+            if not item:
+                continue
+            elif item[0] == "@":
+                if len(item) > len(current):
+                    text += "<section>" * (len(item) - len(current))
+                elif len(item) == len(current):
+                    text += "</section><section>"
+                else:
+                    text += "</section>" * (len(current) - len(item))
+                    text += "</section><section>"
+                current = item
+            else:
+
+                text += item.strip()
+
+        text += "</section>" *len(current)
+        return text
 
 
-section_extension = makeExtension()
-md = markdown.Markdown(extensions = ['meta', section_extension])
+md = markdown.Markdown(extensions = ['meta'])
 
