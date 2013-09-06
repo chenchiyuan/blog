@@ -71,14 +71,14 @@ class Command(BaseCommand):
         text = text.decode("utf-8")
         at = At2Section()
 
-        _ = md.convert(text)
+        html = md.convert(text)
         metadata = parse_meta(md)
 
         prog = re.compile(pattern, re.DOTALL)
-        match = prog.match(text)
+        match = prog.match(html)
         parsed_html = at.parse(match.group(1))
-        html = md.convert(parsed_html)
-        metadata['content'] = html
+
+        metadata['content'] = parsed_html
 
         title = metadata.get("title", "")
         if not title:
