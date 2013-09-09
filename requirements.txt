@@ -1,3 +1,6 @@
 django
 markdown
 south
+sentry
+raven
+gunicorn

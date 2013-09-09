@@ -1,0 +1,18 @@
+body {
+    padding-top: 70px;
+}
+
+.post-title{
+    text-align: center;
+    margin: 40px 0 45px 0;
+    background: url('/static/blog/assets/img/line.gif') center repeat-x;
+}
+
+.post-title span{
+    background: #FFFFFF;
+    padding: 0 20px;
+}
+
+.postdate {
+    text-align: center;
+}
