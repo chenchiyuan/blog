@@ -6,6 +6,7 @@ body {
     text-align: center;
     margin: 40px 0 45px 0;
     background: url('/static/blog/assets/img/line.gif') center repeat-x;
+    font-size: 36px;
 }
 
 .post-title span{
@@ -15,4 +16,26 @@ body {
 
 .postdate {
     text-align: center;
+}
+
+article h2{
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+
+article p{
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+    font-weight: 300;
+}
+
+article h3, h4, h5{
+    margin-top: 18px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px;
 }
