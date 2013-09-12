@@ -18,4 +18,3 @@ Type: 1
 7. 用手机打开百度首页   1-4s    oh my god
 
 @end
-
