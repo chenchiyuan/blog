@@ -69,16 +69,16 @@ class Command(BaseCommand):
         file_handler.close()
 
         text = text.decode("utf-8")
-        at = At2Section()
+     #   at = At2Section()
 
         html = md.convert(text)
         metadata = parse_meta(md)
 
         prog = re.compile(pattern, re.DOTALL)
         match = prog.match(html)
-        parsed_html = at.parse(match.group(1))
+  #      parsed_html = at.parse(match.group(1))
 
-        metadata['content'] = parsed_html
+        metadata['content'] = html
 
         title = metadata.get("title", "")
         if not title:

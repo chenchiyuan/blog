@@ -22,8 +22,14 @@ class Blog(models.Model, QueryMixin):
     type = models.SmallIntegerField(u"类型", choices=const.TYPE_CHOICES,
         default=const.TYPE_BLOG, blank=True, null=True)
 
+    short_description = models.TextField(u"简要介绍", max_length=const.DB_CONTENT_LENGTH,
+                                         default="", blank=True, null=True)
+
     created_at = models.DateTimeField(u"创建于", blank=True, null=True, default=timezone.now)
     modify_at = models.DateTimeField(u"修改于", blank=True, null=True, default=timezone.now, auto_now=True)
 
     def __unicode__(self):
         return self.title
+
+    def snapshot(self):
+        return ""
