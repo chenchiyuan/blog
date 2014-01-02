@@ -6,7 +6,7 @@ Type: 1
 
 <section data-markdown>
     <script type="text/template">
-        ## 看点啥项目介绍
+        ## Whats TV项目介绍
     </script>
 </section>
 
@@ -19,7 +19,8 @@ Type: 1
     </section>
 
 <section>
-    <ul>
+    <img src="http://banking.shares.zoneke.com/image/home.png" width="80%">
+    <ul class="list-unstyled">
     <li class="fragment" data-fragment-index="1">36914部电影</li>
     <li class="fragment" data-fragment-index="2">44441个播放资源 </li>
     <li class="fragment" data-fragment-index="3">覆盖21家视频播放网站。</li>
@@ -28,10 +29,20 @@ Type: 1
 </section>
 
 
+<section>
 <section data-markdown>
     <script type="text/template">
         ### 智能手机操控，摆脱输入困扰
     </script>
+</section>
+<section>
+    <h3>扫一扫, 手机连电脑</h3>
+    <img src="http://banking.shares.zoneke.com/image/guide.png" class="fragment" data-fragment-index="1"/>
+</section>
+<section>
+    <h3>多屏幕实时同步技术</h3>
+    <img src="http://shares.zoneke.com/list_welcome.png" class="fragment" data-fragment-index="1"/>
+</section>
 </section>
 
 
@@ -64,14 +75,15 @@ Type: 1
 </section>
 
 <section>
-    <h3>头头</h3>
+    <h3>banking</h3>
     <p class="fragment" data-fragment-index="1">腾讯微视Android开发工程师</p>
-    <img src="http://img.jing.fm/album/AM/2011/1206/15/Bf/AM2011120615BfG.jpg" class="fragment" data-fragment-index="2"/>
+    <img src="http://banking.shares.zoneke.com/photo.jpg" class="fragment" data-fragment-index="2"/>
 </section>
+
 <section>
     <h3>chenchiyuan</h3>
     <p class="fragment" data-fragment-index="1">百度地图后端工程师</p>
-    <img src="http://tp2.sinaimg.cn/2422799105/180/5616532026/1" class="fragment" data-fragment-index="2"/>
+    <img src="http://shares.zoneke.com/shadow.jpg" class="fragment" data-fragment-index="2"/>
 </section>
 
 <section>
@@ -79,4 +91,5 @@ Type: 1
     <p class="fragment" data-fragment-index="1">网易云音乐前端工程师</p>
     <img src="http://img.jing.fm/album/AM/2011/1206/15/Bf/AM2011120615BfG.jpg" class="fragment" data-fragment-index="2"/>
 </section>
+
 </section>
