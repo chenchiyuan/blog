@@ -1,26 +1,69 @@
 {% extends "base/base.html" %}
 
+{% block link %}
+    <style type="text/css">
+
+        .article {
+            border-bottom:1px solid #ddd;padding-right: 20px;
+        }
+        .article h1, h2, h3{
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 34px;
+        }
+        .article p {
+            font-size: 14px;
+            line-height: 26px;
+        }
+
+        .article h3.title {
+            font-size: 32px;
+        }
+
+        .readmore {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .article-meta {
+            line-height: 26px;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #999;
+        }
+        .article-meta span {
+            margin-right: 10px;
+            border-right: 1px solid #ddd;
+            padding-right: 10px;
+        }
+
+    </style>
+{% endblock %}
+
 {% block title %} 陈驰远的博客 {% endblock %}
 
 {% block container %}
-    <div class="row">
-        <div class="col-md-10">
-            <div class="row">
-                <div class="col-md-2">
-                    <!-- .span2 -->
-                </div>
-                <div class="col-md-8 posts">
-                    <div class="post thumbnail">
-                        <a href="/posts/5/" target="_blank">
-                        <section>
-                            <p>2013-09-05</p>
-                            <h1>title</h1>
-                            <p>content</p>
-                            <a href="#">继续阅读</a>
-                        </section>
-                        </a>
-                    </div>
-                </div>
+    <div class="contailner-body row" style="margin-top: 20px;">
+        <div class="blogs col-xs-offset-1 col-xs-11 col-sm-offset-1 col-sm-11 col-md-offset-2 col-lg-offset-2 col-md-10 col-lg-10">
+            <div class="archives-wrapper row">
+                {% for blog in blogs %}
+                    <section class="archives">
+                        <div class="article row">
+                            <h3 class="title"><a href="">{{ blog.title }}</a></h3>
+                            <div class="article-meta">
+                                <span><i class="icon-calendar">2014-01-02</i></span>
+                                <span>Django 随笔</span>
+                            </div>
+                            <p>
+                                {% autoescape off %}
+                                    {{ blog.snapshot }}
+                                {% endautoescape %}
+                            </p>
+                            <a class="btn btn-primary btn-sm readmore" role="botton" href="">继续阅读</a>
+                        </div>
+                    </section>
+                {% endfor %}
             </div>
         </div>
     </div>

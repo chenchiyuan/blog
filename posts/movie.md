@@ -89,7 +89,7 @@ Type: 1
 <section>
     <h3>wxttt</h3>
     <p class="fragment" data-fragment-index="1">网易云音乐前端工程师</p>
-    <img src="http://img.jing.fm/album/AM/2011/1206/15/Bf/AM2011120615BfG.jpg" class="fragment" data-fragment-index="2"/>
+    <img src="http://shares.zoneke.com/wxttt.jpg" class="fragment" data-fragment-index="2"/>
 </section>
 
 </section>

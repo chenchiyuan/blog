@@ -17,6 +17,7 @@ pattern = r"[^@]*(@.*)@end"
 def smart_print(content):
     print(content.encode("utf-8"))
 
+
 class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
         make_option('-c', '--create',
