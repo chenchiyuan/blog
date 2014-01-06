@@ -52,15 +52,17 @@
                         <div class="article row">
                             <h3 class="title"><a href="">{{ blog.title }}</a></h3>
                             <div class="article-meta">
-                                <span><i class="icon-calendar">2014-01-02</i></span>
-                                <span>Django 随笔</span>
+                                <span><i class="icon-calendar">{{ blog.created_at|date:"Y-m-d" }}</i></span>
+                                {% if blog.tags %}
+                                <span>{{ blog.tags }}</span>
+                                {% endif %}
                             </div>
                             <p>
                                 {% autoescape off %}
                                     {{ blog.snapshot }}
                                 {% endautoescape %}
                             </p>
-                            <a class="btn btn-primary btn-sm readmore" role="botton" href="">继续阅读</a>
+                            <a class="btn btn-primary btn-sm readmore" role="botton" href="{{ blog.absolute_url }}">继续阅读</a>
                         </div>
                     </section>
                 {% endfor %}

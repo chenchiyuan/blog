@@ -41,3 +41,11 @@ class Blog(models.Model, QueryMixin):
     @property
     def snapshot(self):
         return self.content[:100]
+
+    @property
+    def absolute_url(self):
+        if not self.type:
+            url = "/posts/%s/" % self.id
+        else:
+            url = "/slides/%s/" % self.id
+        return url
