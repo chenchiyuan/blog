@@ -31,6 +31,7 @@ class Blog(models.Model, QueryMixin):
     created_at = models.DateTimeField(u"创建于", blank=True, null=True, default=timezone.now)
     modify_at = models.DateTimeField(u"修改于", blank=True, null=True, default=timezone.now, auto_now=True)
 
+    objects = models.Manager()
     blogs = models.Manager()
     posts = PostManager()
     slides = SlideManager()
@@ -40,7 +41,10 @@ class Blog(models.Model, QueryMixin):
 
     @property
     def snapshot(self):
-        return self.content[:100]
+        if not self.type:
+            return self.content[:100]
+        else:
+            return '<iframe src="%s"></iframe>' % self.absolute_url
 
     @property
     def absolute_url(self):

@@ -11,7 +11,7 @@ class BlogListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(BlogListView, self).get_context_data(**kwargs)
-        blogs = Blog.posts.all()
+        blogs = Blog.blogs.all()
         context['blogs'] = blogs
         return context
 

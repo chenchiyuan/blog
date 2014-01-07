@@ -50,18 +50,18 @@
                 {% for blog in blogs %}
                     <section class="archives">
                         <div class="article row">
-                            <h3 class="title"><a href="">{{ blog.title }}</a></h3>
+                            <h3 class="title"><a href="{{ blog.absolute_url }}">{{ blog.title }}</a></h3>
                             <div class="article-meta">
                                 <span><i class="icon-calendar">{{ blog.created_at|date:"Y-m-d" }}</i></span>
                                 {% if blog.tags %}
                                 <span>{{ blog.tags }}</span>
                                 {% endif %}
                             </div>
-                            <p>
+                            <div class="col-md-12">
                                 {% autoescape off %}
                                     {{ blog.snapshot }}
                                 {% endautoescape %}
-                            </p>
+                            </div>
                             <a class="btn btn-primary btn-sm readmore" role="botton" href="{{ blog.absolute_url }}">继续阅读</a>
                         </div>
                     </section>

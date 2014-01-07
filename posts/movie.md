@@ -61,10 +61,23 @@ Type: 1
 </section>
 
 
+<section>
 <section data-markdown>
     <script type="text/template">
         ### 最新web技术，带来极致体验
     </script>
+</section>
+
+<section>
+    <h3>CSS3动画优化</h3>
+    <img src="http://banking.shares.zoneke.com/image/list.png" class="fragment" data-fragment-index="1" />
+
+</section>
+<section>
+    <h3>HTML5播放技术</h3>
+    <img src="http://banking.shares.zoneke.com/image/play.png" class="fragment" data-fragment-index="1" />
+</section>
+
 </section>
 
 <section>
