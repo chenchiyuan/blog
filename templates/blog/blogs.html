@@ -50,7 +50,7 @@
                 {% for blog in blogs %}
                     <section class="archives">
                         <div class="article row">
-                            <h3 class="title"><a href="{{ blog.absolute_url }}">{{ blog.title }}</a></h3>
+                            <h3 class="title"><a href="{{ blog.absolute_url }}" target="_blank">{{ blog.title }}</a></h3>
                             <div class="article-meta">
                                 <span><i class="icon-calendar"></i>{{ blog.created_at|date:"Y-m-d" }}</span>
                                 {% if blog.tags %}
@@ -62,7 +62,7 @@
                                     {{ blog.snapshot }}
                                 {% endautoescape %}
                             </div>
-                            <a class="btn btn-primary btn-sm readmore" role="botton" href="{{ blog.absolute_url }}">继续阅读</a>
+                            <a class="btn btn-primary btn-sm readmore" role="botton" target="_blank" href="{{ blog.absolute_url }}">继续阅读</a>
                         </div>
                     </section>
                 {% endfor %}

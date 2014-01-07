@@ -38,3 +38,4 @@ migrations
 blog.db
 /static
 /tests
+config/deploy_env.py

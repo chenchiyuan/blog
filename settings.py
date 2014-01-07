@@ -1,10 +1,18 @@
-# Django settings for blog project.
+# -*- coding: utf-8 -*-
+# __author__ = chenchiyuan
+
+from __future__ import division, unicode_literals, print_function
 import os
+import json
+from config import config
 
 PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = config.getboolean("django", "debug")
+TEMPLATE_DEBUG = config.getboolean("django", "template_dubug")
+
+ALLOWED_HOSTS = json.loads(config.get("django", "allowed_hosts"))
+APP_HOST_NAME = config.get("django", "app_host_name")
 
 ADMINS = (
     ("chenchiyuan", "chenchiyuan03@gmail.com"),
