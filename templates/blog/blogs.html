@@ -52,7 +52,7 @@
                         <div class="article row">
                             <h3 class="title"><a href="{{ blog.absolute_url }}">{{ blog.title }}</a></h3>
                             <div class="article-meta">
-                                <span><i class="icon-calendar">{{ blog.created_at|date:"Y-m-d" }}</i></span>
+                                <span><i class="icon-calendar"></i>{{ blog.created_at|date:"Y-m-d" }}</span>
                                 {% if blog.tags %}
                                 <span>{{ blog.tags }}</span>
                                 {% endif %}

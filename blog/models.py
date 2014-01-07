@@ -44,7 +44,7 @@ class Blog(models.Model, QueryMixin):
         if not self.type:
             return self.content[:100]
         else:
-            return '<iframe src="%s"></iframe>' % self.absolute_url
+            return '<iframe src="%s" style="margin-top:21px;margin-bottom:10.5px"></iframe>' % self.absolute_url
 
     @property
     def absolute_url(self):

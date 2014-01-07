@@ -34,3 +34,7 @@ class SlideDetailView(TemplateView):
         slide = Blog.slides.get(**kwargs)
         context["blog"] = slide
         return context
+
+
+class AboutView(TemplateView):
+    template_name = "blog/about.html"
