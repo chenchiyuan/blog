@@ -14,6 +14,7 @@ class Blog(models.Model, QueryMixin):
         app_label = 'blog'
         db_table = 'blog_blog'
         verbose_name = verbose_name_plural = u"博客"
+        ordering = ['-modify_at']
 
     title = models.CharField(u"标题", max_length=const.DB_TITLE_LENGTH, blank=True, null=True)
     content = models.TextField(u"内容", max_length=const.DB_CONTENT_LENGTH, blank=True, null=True,
