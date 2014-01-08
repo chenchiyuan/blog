@@ -6,7 +6,7 @@ from optparse import make_option
 from django.core.management import BaseCommand
 from django.conf import settings
 from blog.models import Blog
-from utils.helper import md, parse_meta
+from utils.helper import md, parse_meta, HtmlFormatter
 
 import os
 
@@ -68,25 +68,29 @@ class Command(BaseCommand):
 
         html = md.convert(text.decode("utf-8"))
         metadata = parse_meta(md)
-        metadata['content'] = html
+        metadata['content'] = HtmlFormatter.format_html(html)
         title = metadata.get("title", "")
         if not title:
             print("MD文件无title")
             return
 
         blog = Blog.get_by_unique(title=title)
-        if not blog:
-            blog = Blog(**metadata)
-        else:
-            for key, value in metadata.items():
-                setattr(blog, key, value)
+
+        for key, value in metadata.items():
+            setattr(blog, key, value)
+
         blog.save()
         smart_print("博客: %s,存储成功" %title)
 
     def handle(self, *args, **options):
-        if options['name']:
-            self.gen_posts(**options)
-        elif options['make']:
-            self.make(**options)
-        else:
-            smart_print("亲, 请仔细看看使用说明")
+        try:
+            if options['name']:
+                self.gen_posts(**options)
+            elif options['make']:
+                self.make(**options)
+            else:
+                smart_print("亲, 请仔细看看使用说明")
+        except Exception, e:
+            print(e)
+            import traceback
+            traceback.print_exc()

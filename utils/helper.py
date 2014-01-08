@@ -3,8 +3,23 @@
 
 from __future__ import division, unicode_literals, print_function
 import markdown
-from markdown.inlinepatterns import Pattern
-from markdown.util import etree
+from bs4 import BeautifulSoup
+
+
+class HtmlFormatter(object):
+    @classmethod
+    def format_html(self, html):
+        html = self.format_table(html)
+        return html
+
+    @classmethod
+    def format_table(cls, html):
+        soup = BeautifulSoup(html)
+        tables = soup.find_all("table")
+        for table in tables:
+            table.attrs['class'] = table.attrs.get("class", "") + "table table-striped"
+        return unicode(soup)
+
 
 def parse_meta(md):
     meta = md.Meta
@@ -66,5 +81,5 @@ class At2Section(object):
         return text
 
 
-md = markdown.Markdown(extensions = ['meta'])
+md = markdown.Markdown(extensions=['meta', 'tables'])
 
