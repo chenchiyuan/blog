@@ -46,15 +46,15 @@
 {% block container %}
     <div class="contailner-body row" style="margin-top: 20px;">
         <div class="blogs col-xs-offset-1 col-xs-11 col-sm-offset-1 col-sm-11 col-md-offset-2 col-lg-offset-2 col-md-10 col-lg-10">
-            <div class="archives-wrapper row">
+            <div class="archives-wrapper">
                 {% for blog in blogs %}
                     <section class="archives">
                         <div class="article">
                             <div class="row">
-                                <h3 class="col-md-12 title"><a href="{{ blog.absolute_url }}" target="_blank">{{ blog.title }}</a></h3>
+                                <h3 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 title"><a href="{{ blog.absolute_url }}" target="_blank">{{ blog.title }}</a></h3>
                             </div>
                             <div class="row">
-                                <div class="col-md-12 article-meta">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 article-meta">
                                     <span><i class="icon-calendar"></i>{{ blog.created_at|date:"Y-m-d" }}</span>
                                     {% if blog.tags %}
                                         <span>{{ blog.tags }}</span>
@@ -62,14 +62,14 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     {% autoescape off %}
                                         {{ blog.snapshot }}
                                     {% endautoescape %}
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <a class="btn btn-primary btn-sm readmore grow" role="botton" target="_blank" href="{{ blog.absolute_url }}">继续阅读</a>
                                 </div>
                             </div>
