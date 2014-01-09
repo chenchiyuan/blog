@@ -33,16 +33,18 @@
     </div>
 {% endblock %}
 {% block comments %}
-    <script type="text/javascript">
-var duoshuoQuery = {short_name:"chenchiyuan"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-
+    <div class="comments row" style="margin-top: 30px;">
+        <div class="ds-thread col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-8"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"chenchiyuan"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
 {% endblock %}
