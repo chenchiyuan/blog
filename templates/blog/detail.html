@@ -11,24 +11,18 @@
 {% block container %}
     <div class="article">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 <h1 class="post-title"><span>{{ blog.title }}</span></h1>
                 <p class="post-date">创建于: {{ blog.created_at|date:'Y-m-d' }}</p>
                 <hr/>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-2">
-                    </div>
-                    <article class="col-md-8">
-                        {% autoescape off %}
-                            {{ blog.content }}
-                        {% endautoescape %}
-                    </article>
-                </div>
-            </div>
+            <article class="col-xs-12 col-sm-12 col-md-offset-2 col-lg-offset-2 col-md-8 col-lg-8">
+                {% autoescape off %}
+                    {{ blog.content }}
+                {% endautoescape %}
+            </article>
         </div>
     </div>
 {% endblock %}

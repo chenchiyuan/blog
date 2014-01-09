@@ -17,7 +17,7 @@ class HtmlFormatter(object):
         soup = BeautifulSoup(html)
         tables = soup.find_all("table")
         for table in tables:
-            table.attrs['class'] = table.attrs.get("class", "") + "table table-striped"
+            table.attrs['class'] = table.attrs.get("class", "") + "table table-striped table-responsive"
         return unicode(soup)
 
 
