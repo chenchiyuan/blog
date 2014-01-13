@@ -1,3 +1,8 @@
+#header {
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-delay: 0.1s;
+}
+
 .grow {
   display: inline-block;
   -webkit-transition-duration: 0.3s;
