@@ -75,6 +75,8 @@ class Command(BaseCommand):
             return
 
         blog = Blog.get_by_unique(title=title)
+        if not blog:
+            blog = Blog()
 
         for key, value in metadata.items():
             setattr(blog, key, value)

@@ -86,3 +86,8 @@ body {
     color: #333;
     margin-top: 1em;
 }
+
+b, strong {
+    font-weight: bold;
+    color: #FF3333;
+}
