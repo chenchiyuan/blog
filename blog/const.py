@@ -19,5 +19,6 @@ TYPE_CHOICES = (
 # URLS
 URL_ID = "(?P<id>[0-9]+)"
 URL_BLOG_ID = "(?P<blog_id>[0-9]+)"
+URL_SLUG = "(?P<slug>[a-zA-Z0-9-]+)"
 
 
