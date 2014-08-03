@@ -31,4 +31,6 @@ def slugify(s):
         if cat in 'L':
             rv.extend(lazy_pinyin(c))
     new = '-'.join(rv).strip()
+    if not new:
+        return s
     return new
