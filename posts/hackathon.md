@@ -38,6 +38,10 @@ Type: 1
 <img src="http://zoneke-img.b0.upaiyun.com/95607ef771be68155c64a9f00ec0338a.jpg" alt="">
 </section>
 
+<section>
+<img src="http://zoneke-img.b0.upaiyun.com/b4ef5d403b9df0812027ad051a565e83.jpg" alt="">
+</section>
+
 </section>
 
 <section>
@@ -48,6 +52,22 @@ Type: 1
 </ul>
 </section>
 
+<section>
+<h3>用到的技术</h3>
+<ul>
+   <li class="fragment list-unstyled" data-fragment-index="1"><p>Activity Start</p></li>
+   <li class="fragment list-unstyled" data-fragment-index="2"><p>GEO Location</p></li>
+</ul>
+</section>
+
+
+<section>
+<h3>团队介绍</h3>
+<ul>
+   <li class="fragment list-unstyled" data-fragment-index="1"><p>陈驰远: chenchiyuan03@gmail.com</p></li>
+   <li class="fragment list-unstyled" data-fragment-index="2"><p>易蒂: yidi225@qq.com</p></li>
+</ul>
+</section>
 
 <section>
 <h3>谢谢!</h3>

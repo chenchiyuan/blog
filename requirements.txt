@@ -1,9 +1,10 @@
 Django==1.5.2
 Markdown==2.3.1
-PIL==1.1.7
 South==0.8.2
+Unidecode==0.04.14
 beautifulsoup4==4.3.2
 ipython==1.0.0
+pypinyin==0.4.3
 python-nvd3==0.8.0
 raven==3.4.1
 wsgiref==0.1.2
